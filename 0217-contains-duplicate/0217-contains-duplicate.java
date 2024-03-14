@@ -1,14 +1,11 @@
+import java.util.Hashtable;
 class Solution {
     public boolean containsDuplicate(int[] nums) {
-        Arrays.sort(nums);
-        int i,j;
-        i = 0;
-        while (i < nums.length-1){
-            j = i+1;
-            if ( nums[i] ==  nums[j]){
+        HashSet<Integer> seen = new HashSet<>();
+        for (int num : nums) {
+            if (seen.contains(num))
                 return true;
-            }
-            i++;
+            seen.add(num);
         }
         return false;
     }

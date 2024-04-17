@@ -13,7 +13,7 @@ public class Solution {
     public boolean hasCycle(ListNode head) {
         ListNode  firstPoint = head;
         ListNode  secondPoint = head;
-        while(firstPoint != null && secondPoint != null && secondPoint.next!= null){
+        while(secondPoint != null && secondPoint.next!= null){
             firstPoint = firstPoint.next;
             secondPoint = secondPoint.next.next;
                 

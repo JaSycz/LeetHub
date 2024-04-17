@@ -11,14 +11,15 @@
  */
 public class Solution {
     public boolean hasCycle(ListNode head) {
-        HashSet<ListNode> count = new HashSet<>();
-        while(head!= null){
-            if(count.contains(head)){
+        ListNode  firstPoint = head;
+        ListNode  secondPoint = head;
+        while(firstPoint != null && secondPoint != null && secondPoint.next!= null){
+            firstPoint = firstPoint.next;
+            secondPoint = secondPoint.next.next;
+                
+            if(firstPoint == secondPoint){
                 return true;
             }
-            count.add(head);
-            head = head.next;
-            
             
         }
         return false;

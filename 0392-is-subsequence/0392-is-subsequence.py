@@ -10,4 +10,4 @@ class Solution:
             i+= 1
         
         
-        return j + 1 > len(s) and j != 0
+        return j + 1 > len(s)

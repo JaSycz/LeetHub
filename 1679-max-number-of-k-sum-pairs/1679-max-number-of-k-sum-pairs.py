@@ -1,18 +1,19 @@
 class Solution:
     def maxOperations(self, nums: List[int], k: int) -> int:
-        dict = {}
+        nums.sort()
+
+        i,j = 0,len(nums)-1
         op = 0
+        while i < j:
+            sum = nums[i]+nums[j]
+            if sum == k:
+                op += 1
+                i+= 1
+                j-= 1
 
-        for num in nums:
-            result = k - num
-
-            if result in dict.keys():
-                op+=1
-                if dict.get(result) == 1:
-                    dict.pop(result)
-                else:
-                    dict[result] -= 1
+            elif sum < k:
+                i+=1
             else:
-                dict.update({num : dict.get(num,0)+1})
+                j-=1
 
         return op

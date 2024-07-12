@@ -3,10 +3,8 @@ class Solution:
         freq_dict = {}
 
         for num in arr:
-            if num  in freq_dict.keys():
-                freq_dict[num] += 1
-            else:
-                freq_dict[num] = 1
+            freq_dict[num] = freq_dict.get(num,0)+1
+            
         
         val = freq_dict.values()
         set_val = set(val)

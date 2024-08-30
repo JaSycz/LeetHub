@@ -20,12 +20,13 @@ class Solution:
         middle_node = list_length//2
         current = head
 
-        for i in range(0,list_length):
+        for i in range(0,middle_node +2):
             if middle_node - 1 == i:
                 before = current
             elif middle_node + 1 == i:
                 after = current
-            current = current.next
+            if current is not None:
+                current = current.next
             
             
 

@@ -23,8 +23,6 @@ class Solution:
                  
             current = current.next
             count+=1
-        print(odd_nodes)
-        print(even_nodes)
         odd_tail.next = even_nodes
         
         return odd_nodes

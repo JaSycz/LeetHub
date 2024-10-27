@@ -36,7 +36,6 @@ class Solution:
         shorter_path = p_trace  
     
       for i in range(len(shorter_path)-1,-1,-1):
-        print(i)
         if q_trace[i].val == p_trace[i].val:
            return q_trace[i]
 

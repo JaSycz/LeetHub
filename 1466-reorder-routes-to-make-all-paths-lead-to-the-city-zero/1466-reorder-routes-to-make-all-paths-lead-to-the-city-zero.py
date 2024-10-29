@@ -6,11 +6,12 @@ class Solution:
         self.count = 0
         def dfs(city):
             for road in city:
-                if road[0] not in visited:
-                    if road[1] == 0:
-                        self.count+=1
-                    visited.add(road[0])
-                    dfs(adj[road[0]])    
+                if road[0] in visited:
+                    continue
+                if road[1] == 0:
+                    self.count+=1
+                visited.add(road[0])
+                dfs(adj[road[0]])    
                 
 
 

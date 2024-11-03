@@ -1,14 +1,17 @@
 class Solution:
     def rotateString(self, s: str, goal: str) -> bool:
         
-    
+        start_indexes = []
 
-        for i in range(0,len(s)):
-            i_str = []
-            for n in range(i,len(s)+i):
-                index = n % (len(s))
-                i_str.append(s[index])
-            if "".join(i_str) == goal:
+        for i in range (0,len(s)):
+            if s[i] == goal[0]:
+                start_indexes.append(i)
+        
+        for start in start_indexes:
+            shifted_s = []
+            for i in range(start,len(s)+start):
+                shifted_s.append(s[i%len(s)])
+            if "".join(shifted_s) == goal:
                 return True
 
 

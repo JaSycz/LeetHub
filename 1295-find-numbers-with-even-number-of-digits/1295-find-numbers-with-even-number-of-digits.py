@@ -7,5 +7,6 @@ class Solution:
                 count+=1
             if count%2==0:
                 res+=1
+            count=0
         
         return res

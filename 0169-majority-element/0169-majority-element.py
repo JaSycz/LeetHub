@@ -1,16 +1,21 @@
 from collections import defaultdict
 
 class Solution:
-    def map_frequencies(self, nums):
-        freq = defaultdict(int)
-
-        for i in nums:
-            freq[i]+=1
-        
-        return freq
+    
     
     def majorityElement(self, nums: List[int]) -> int:
-        frequencies = self.map_frequencies(nums)
         
+        count = 0
+        val = -1
 
-        return max(frequencies, key=frequencies.get)
+        for i in nums:
+            if count == 0:
+                val = i
+                count=1
+            else:
+                if i == val:
+                    count+=1
+                else:
+                    count-=1
+
+        return val

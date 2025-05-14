@@ -2,15 +2,20 @@ from collections import defaultdict
 class Solution:
 
     def lengthOfLongestSubstring(self, s: str) -> int:
-        substring = set()
+        char_to_pos = {}
         max_len = 0
-        for i in range(0,len(s)):
-            if s[i] in substring:
-                substring.clear()
-                i = s.index(s[i])+1
-                print(i)
-            substring.add(s[i])
-            max_len = max(max_len,len(substring))
+        i=0
+
+        while i<len(s):
+            if s[i] in char_to_pos.keys():
+                i = char_to_pos[s[i]]+1
+                char_to_pos = {}  
+                
+            
+            char_to_pos[s[i]] = i
+            max_len = max(max_len,len(char_to_pos.keys()))
+            i+=1
+            print(i)
 
         
 

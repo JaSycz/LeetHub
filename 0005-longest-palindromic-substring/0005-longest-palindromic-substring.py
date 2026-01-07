@@ -2,7 +2,7 @@ class Solution:
     def longestPalindrome(self, s: str) -> str:
         n = len(s)
         dp = [[False] * n for _ in range(n)]
-        ans =[]
+        ans =[0,0]
         for i in range(n):
             dp[i][i] = True
 
